@@ -13,9 +13,11 @@ public class UniqueCharacter {
 	public static void main (String args[]) {
 		String a = "!abs hj*&;";
 		UniqueCharacter uc = new UniqueCharacter();
-		uc.determineUniqueCharacter(a);
-		uc.notUseExtraDataStructure(a);
-		System.out.println(uc.isUniqueChars(a));
+		//uc.determineUniqueCharacter(a);
+		//uc.notUseExtraDataStructure(a);
+		//System.out.println(uc.isUniqueChars(a));
+		System.out.println(0>>1);
+		isUniqueChars2("bde");
 	}
 
 
@@ -68,5 +70,19 @@ public class UniqueCharacter {
 		}
 		return true;
 	}
+	
+	public static boolean isUniqueChars2(String str){
+		int checker = 0;
+		for(int i=0;i<str.length();i++){
+			int val =str.charAt(i) -'a';
+			//System.out.println("a:"+checker&(1<<val));
+			if((checker&(1<<val))>0) return false;
+			checker |= (1<<val);
+			System.out.println((1<<val)+" "+val+" "+checker);
+		}
+		return true;
+	}
+	
+
 
 }
