@@ -60,7 +60,7 @@ public class NextNode {
 			while(nd.parent!=null&&nd.parent.right ==nd){
 				nd = nd.parent;
 			}
-			return nd.parent==null?null:nd.parent;
+			return nd.parent;//==null?null:nd.parent;
 		}
 	}
 	

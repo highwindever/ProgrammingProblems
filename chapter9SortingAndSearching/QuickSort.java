@@ -37,6 +37,11 @@ public class QuickSort {
 			int NewRanidx = partition(arr, low, high, ranidx);
 			quickSort(arr,low,NewRanidx-1);
 			quickSort(arr,NewRanidx+1,high);
-		}
+		}else return;
 	}
 }
+
+
+
+
+

@@ -47,14 +47,18 @@ public class BFS {
 		int nextLevelNum =0;
 		level.add(root);
 		while(curLevelNum!=0){
-			Node curNode = level.poll();			
-			if(curNode!=null){
-				curLevelNum--;
-				System.out.print(curNode.data+" ");
+			Node curNode = level.poll();
+			curLevelNum--;
+			System.out.print(curNode.data + " ");
+			if(curNode.left!=null){
 				level.add(curNode.left);
-				level.add(curNode.right);
-				nextLevelNum +=2;
+				nextLevelNum ++;
 			}
+			if(curNode.right!=null){
+				level.add(curNode.right);
+				nextLevelNum ++;
+			}
+
 			if(curLevelNum==0){
 				System.out.println();
 				curLevelNum = nextLevelNum;

@@ -32,7 +32,7 @@ public class NextNumberWithSame1Bits {
 			return new String(arr);
 		}else {
 			StringBuilder sb = new StringBuilder();
-			sb.append("10");
+			sb.append("10");//111000->1000011
 			sb.append(str.substring(idx1+1));
 			sb.append(str.substring(1,idx1+1));
 			return sb.toString();

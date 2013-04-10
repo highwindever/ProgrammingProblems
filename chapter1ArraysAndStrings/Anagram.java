@@ -23,7 +23,25 @@ public class Anagram {
 
 	}
 		
-		
+    public static boolean isAnagram(String a, String b){
+        if(a==null||b==null) return false;
+        if(a.length()!=b.length()) return false;
+        
+        int[] charSet = new int[256];
+        for(int i=0;i<a.length();i++){
+            charSet[a.charAt(i)]++;
+        }
+        
+        for(int j=0;j<b.length();j++){
+            charSet[b.charAt(j)]--;
+        }
+        
+        for(int k=0;k<charSet.length;k++){
+            if(charSet[k]!=0) return false;
+        }
+        return true;
+    }
+
 		public boolean areAnagramsSort(String a, String b) {
 			if(a==null&&b==null) return false;
 			else if (a== null||b==null) return false;
@@ -62,24 +80,7 @@ public class Anagram {
 			return true;
 		}
 		
-	    public static boolean isAnagram(String a, String b){
-	        if(a==null||b==null) return false;
-	        if(a.length()!=b.length()) return false;
-	        
-	        int[] charSet = new int[256];
-	        for(int i=0;i<a.length();i++){
-	            charSet[a.charAt(i)]++;
-	        }
-	        
-	        for(int j=0;j<b.length();j++){
-	            charSet[b.charAt(j)]--;
-	        }
-	        
-	        for(int k=0;k<charSet.length;k++){
-	            if(charSet[k]!=0) return false;
-	        }
-	        return true;
-	    }
+
 		
 		
 	
